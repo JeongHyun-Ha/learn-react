@@ -1,29 +1,32 @@
 import React from "react";
 
 function App(props) {
-  // object ({}, [])
-  // 나머지 모두 (rest property)
-  // ...변수명
-
+  // 나머지 모두 문법으로 객체 복사
   const a = {
-    name: "Ha",
-    email: "Ha@naver.com",
-    password: "123",
-    address: "seoul",
+    name: "son",
+    age: 33,
+    city: "london",
   };
+  const b = a;
+  b.age = 44;
+  console.log(a.age);
 
-  const { name, email, ...b } = a;
-  console.log(b);
+  const { ...c } = a;
+  c.city = "seoul";
+  console.log(c.city);
+  console.log(a.city);
 
-  const c = {
+  const e = {
+    name: "lee",
+    country: "korea",
+    team: "paris",
+    salary: 700,
     city: "seoul",
-    country: "us",
-    price: 400,
-    category: "food",
   };
 
-  const { price, ...d } = c;
-  console.log("price", price);
+  const { ...d } = e;
+  console.log(e);
+  d.city = "busan";
   console.log(d);
 
   return <div></div>;
