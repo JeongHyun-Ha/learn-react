@@ -17,6 +17,14 @@ function App(props) {
       <button onClick={a}>클릭@</button>
       <br />
       <button onClick={() => console.log("arrow function")}>클릭$</button>
+      <br />
+      <button
+        onClick={function () {
+          console.log("annonymous function!!");
+        }}
+      >
+        클릭#
+      </button>
     </div>
   );
 }
