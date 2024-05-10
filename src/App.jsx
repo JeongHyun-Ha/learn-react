@@ -5,20 +5,15 @@ function MyComp(props) {
 }
 
 function App(props) {
+  // props의 이름은 lowerCamelCase 로 작성
+  // 예약어를 쓰지 말 것
+
   return (
     <div>
-      <MyComp
-        name="son" // string type 은 중괄호 생략 가능
-        // name={"son"}
-        age={3.14}
-        address={{ city: "seoul", country: "us" }}
-        foods={["pizza", "coffee"]}
-        married={true}
-        action={function () {
-          console.log("action");
-        }}
-        someAction={() => console.log("someAction")}
-      />
+      <label htmlFor="input1">aaa</label>
+      <input id="input1" type="text" />
+      <p className="error note"></p>
+      <MyComp number={3} pageNumber={3} let={5} const={5} />
     </div>
   );
 }
