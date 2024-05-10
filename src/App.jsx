@@ -1,17 +1,19 @@
 import React from "react";
 
 function App(props) {
+  // style props
   return (
     <div>
-      <button
-        onClick={() => console.log("clicked")}
-        onMouseEnter={() => console.log("mouse entered")}
-        onMouseLeave={() => console.log("mouse leave")}
+      <div
+        style={{
+          color: "red",
+          padding: "10px",
+          border: "2px dotted black",
+          textAlign: "center",
+        }}
       >
-        클릭
-      </button>
-
-      <input type="text" onChange={() => console.log("changed")} />
+        Lorem ipsum dolor.
+      </div>
     </div>
   );
 }
