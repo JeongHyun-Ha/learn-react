@@ -1,19 +1,17 @@
 import React, { useState } from "react";
 
-function MyCounter() {
-  const [count, setCount] = useState(0);
-  return (
-    <div>
-      {count}
-      <button onClick={() => setCount(count + 1)}>클릭</button>
-    </div>
-  );
-}
+const foods = ["pizza", "ramen", "coffee", "latte", "burger"];
 
 function App(props) {
+  const [index, setIndex] = useState(0);
+  const food = foods[index];
   return (
     <div>
-      <MyCounter />
+      {index > 0 && <button onClick={() => setIndex(index - 1)}>이전</button>}
+      {index < foods.length - 1 && (
+        <button onClick={() => setIndex(index + 1)}>다음</button>
+      )}
+      <div>{food}</div>
     </div>
   );
 }
