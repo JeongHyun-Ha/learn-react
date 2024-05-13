@@ -1,12 +1,11 @@
 import React from "react";
-import { ArrowComp, MyComp, YourComp } from "./MyComps.jsx";
+import { v1, v2 } from "./MyComps.jsx";
 
 function App(props) {
   return (
     <div>
-      <MyComp />
-      <YourComp />
-      <ArrowComp />
+      <div>{v1}</div>
+      <div>{v2}</div>
     </div>
   );
 }
