@@ -1,14 +1,16 @@
 import React from "react";
+import axios from "axios";
 
 function App(props) {
-  const obj1 = { name: "son", age: 33 };
-  const json1 = '{ "name": "son", "age": 33 }';
+  function handleClick1() {
+    const obj1 = { name: "son", age: 44 };
+    // const data = JSON.stringify(obj1);
+    axios.post("/api/main41/sub1", obj1); // 자동으로 stringify 해줌
+  }
 
-  const obj2 = { name: "lee", age: 22 };
-  const json2 = JSON.stringify(obj2);
   return (
     <div>
-      <p>{json2}</p>
+      <button onClick={handleClick1}>요청(json 데이터 포함)</button>
     </div>
   );
 }
