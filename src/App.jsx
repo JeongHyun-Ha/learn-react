@@ -9,6 +9,8 @@ const router = createBrowserRouter([
   { path: "/add", element: <BoardAdd /> },
   { path: "/edit", element: <BoardEdit /> },
   { path: "/list", element: <BoardList /> },
+  { path: "/board/write", element: <div>게시물 작성하기</div> },
+  { path: "/board/edit", element: <div>게시물 수정하기</div> },
 ]);
 function App(props) {
   return <RouterProvider router={router} />;
