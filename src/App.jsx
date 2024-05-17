@@ -1,15 +1,44 @@
 import React from "react";
-import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  Link,
+  Outlet,
+  RouterProvider,
+} from "react-router-dom";
+
+function SpringRoot() {
+  return (
+    <div>
+      <div
+        style={{
+          padding: "10px",
+          background: "#eee",
+          display: "flex",
+          gap: "5px",
+        }}
+      >
+        <div>
+          <Link to="/spring/learn">LEARN</Link>
+        </div>
+        <div>
+          <Link to="/spring/api">API</Link>
+        </div>
+        <div>
+          <Link to="/spring/doc">DOC</Link>
+        </div>
+      </div>
+
+      <div style={{ marginTop: "20px" }}>
+        <Outlet />
+      </div>
+    </div>
+  );
+}
 
 const router = createBrowserRouter([
   {
     path: "spring",
-    element: (
-      <div>
-        spring root page
-        <Outlet />
-      </div>
-    ),
+    element: <SpringRoot />,
     children: [
       { path: "api", element: <div>api page</div> },
       { path: "doc", element: <div>doc page</div> },
