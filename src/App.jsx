@@ -1,45 +1,35 @@
 import React from "react";
 import {
-  Box,
-  Center,
+  Button,
   ChakraProvider,
-  Checkbox,
-  FormControl,
-  FormHelperText,
-  FormLabel,
-  Input,
-  Radio,
-  RadioGroup,
-  Switch,
-  Textarea,
+  Modal,
+  ModalBody,
+  ModalCloseButton,
+  ModalContent,
+  ModalFooter,
+  ModalHeader,
+  ModalOverlay,
+  useDisclosure,
 } from "@chakra-ui/react";
 
 function App(props) {
+  const { isOpen, onClose, onOpen } = useDisclosure();
+
   return (
     <ChakraProvider>
-      <FormControl>
-        <Center>
-          <Box>
-            <FormLabel>Email address</FormLabel>
-            <Input type="email" />
-            <FormHelperText>We will never share your email.</FormHelperText>
-          </Box>
-        </Center>
-      </FormControl>
-      <hr />
-      <Checkbox>Lorem.</Checkbox>
-      <Checkbox>Id!</Checkbox>
-      <Checkbox>Quis?</Checkbox>
-      <hr />
-      <RadioGroup>
-        <Radio value="1">1</Radio>
-        <Radio value="2">2</Radio>
-        <Radio value="3">3</Radio>
-      </RadioGroup>
-      <hr />
-      <Switch />
-      <hr />
-      <Textarea></Textarea>
+      <Button onClick={onOpen}>Trigger</Button>
+      <Modal isOpen={isOpen} onClose={onClose}>
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader>Hello Title</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody>Lorem ipsum.</ModalBody>
+          <ModalFooter>
+            <Button onClick={onClose}>Close</Button>
+            <Button colorScheme={"blue"}>저장</Button>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
     </ChakraProvider>
   );
 }
