@@ -4,17 +4,11 @@ import { Box, ChakraProvider } from "@chakra-ui/react";
 function App(props) {
   return (
     <ChakraProvider>
-      <Box bgColor={"tomato"} m={1}>
+      <Box bgColor={"tomato"} w={"500px"}>
         Lorem ipsum dolor.
       </Box>
-      <Box bgColor={"tomato"} m={2}>
+      <Box bgColor={"yellow.700"} w={{ base: "100%", md: "500px" }}>
         Lorem ipsum dolor.
-      </Box>
-      <Box bgColor={"tomato"} m={10}>
-        Ea, recusandae, sed.
-      </Box>
-      <Box bgColor={"tomato"} m={20}>
-        Eaque, expedita, inventore!
       </Box>
     </ChakraProvider>
   );
