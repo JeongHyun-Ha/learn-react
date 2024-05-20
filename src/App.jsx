@@ -1,32 +1,24 @@
 import React from "react";
-import { Badge, Box, Button, ChakraProvider } from "@chakra-ui/react";
 
 function App(props) {
-  function handleButtonClick(e) {
-    e.stopPropagation();
-    console.log("버튼 클릭됨");
-  }
+  function handleLinkClick() {}
 
-  function handleBoxClick() {
-    console.log("박스 클릭됨");
-  }
-
-  function handleBadgeClick(e) {
-    e.stopPropagation();
-    console.log("뱃지 클릭됨");
+  function handleSubmitForm(e) {
+    e.preventDefault();
+    console.log("다른 동작하는 코드 작성");
   }
 
   return (
-    <ChakraProvider>
-      <Box onClick={handleBoxClick} w={"100px"} h={"100px"} bgColor={"orange"}>
-        <Button onClick={handleButtonClick}>
-          클릭
-          <Badge onClick={handleBadgeClick} ml={3}>
-            new
-          </Badge>
-        </Button>
-      </Box>
-    </ChakraProvider>
+    <div>
+      <a href="https://www.naver.com" onClick={handleLinkClick}>
+        네이버
+      </a>
+      <hr />
+      <form action="https://www.naver.com">
+        <input type="text" onSubmit={handleSubmitForm} />
+        <button>전송</button>
+      </form>
+    </div>
   );
 }
 
