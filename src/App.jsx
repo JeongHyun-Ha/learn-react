@@ -1,21 +1,24 @@
 import React from "react";
 
 function App(props) {
-  function handleLinkClick() {}
+  function handleLinkClick(e) {
+    e.preventDefault();
+    console.log("a 태그 클릭");
+  }
 
   function handleSubmitForm(e) {
     e.preventDefault();
-    console.log("다른 동작하는 코드 작성");
+    console.log("폼 태그");
   }
 
   return (
     <div>
-      <a href="https://www.naver.com" onClick={handleLinkClick}>
-        네이버
+      <a href="https://www.google.com" onClick={handleLinkClick}>
+        구글
       </a>
       <hr />
-      <form action="https://www.naver.com">
-        <input type="text" onSubmit={handleSubmitForm} />
+      <form action="https://www.google.com" onSubmit={handleSubmitForm}>
+        <input type="text" />
         <button>전송</button>
       </form>
     </div>
